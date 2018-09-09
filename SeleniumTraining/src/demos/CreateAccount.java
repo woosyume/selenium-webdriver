@@ -43,9 +43,11 @@ public class CreateAccount {
 		driver.findElement(By.name("ctl00$MainContent$checkWeeklyEmail")).click();
 		driver.findElement(By.id("MainContent_btnSubmit")).click();
 		
-		
 		// 4. Get confirmation
+		String result = driver.findElement(By.id("MainContent_lblTransactionResult")).getText();
+		System.out.println("RESULT: " + result);
 		
 		// 5. Close the browser
+		driver.close();
 	}
 }
