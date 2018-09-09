@@ -6,8 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Login {
 	public static void main(String[] args) {
+		// 0. OS check
+		final String OSNAME = System.getProperty("os.name").toLowerCase();
+		
 		// 1. Define the web driver
-		System.setProperty("webdriver.chrome.driver", "/Users/woohyeok.kim/Desktop/study/selenium-webdriver/chromedriver");
+		if (OSNAME.equals("mac")) {
+			System.setProperty("webdriver.chrome.driver", "/Users/woohyeok.kim/Desktop/study/selenium-webdriver/chromedriver");
+		} else{
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\woosy\\Desktop\\dev\\selenium-webdriver\\chromedriver.exe");
+		}
 		WebDriver driver = new ChromeDriver();
 		
 		// 2. Open web browser and navigate to page
@@ -21,7 +28,7 @@ public class Login {
 		driver.findElement(By.name("ctl00$MainContent$txtUserName")).sendKeys("woosyume@gmail.com");
 		
 		// 4. Enter password
-		driver.findElement(By.name("ctl00$MainContent$txtPassword")).sendKeys("[password]");
+		driver.findElement(By.name("ctl00$MainContent$txtPassword")).sendKeys("1234");
 		
 		// 5. Click login
 		driver.findElement(By.name("ctl00$MainContent$btnLogin")).click();
