@@ -10,7 +10,8 @@ public class Login {
 		final String OSNAME = System.getProperty("os.name").toLowerCase();
 		
 		// 1. Define the web driver
-		if (OSNAME.equals("mac")) {
+		System.out.println(OSNAME);
+		if (OSNAME.contains("mac")) {
 			System.setProperty("webdriver.chrome.driver", "/Users/woohyeok.kim/Desktop/study/selenium-webdriver/chromedriver");
 		} else{
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\woosy\\Desktop\\dev\\selenium-webdriver\\chromedriver.exe");

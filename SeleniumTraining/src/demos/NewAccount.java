@@ -2,9 +2,12 @@ package demos;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+
+import demo.utilities.DriverFactory;
 
 public class NewAccount {
 	public static void main(String[] args) {
@@ -13,62 +16,56 @@ public class NewAccount {
 		String password = "password";
 		String country = "Denmark";
 		String phoneNumber = "08036902222";
-		String browserType = "chrome";
-		
-		String gender;
+		String gender = "Female";
 		String weeklyEmail;
 		String montjlyEmail;
 		String occasionalEmail;
-		WebDriver driver;
-		
-		// 0. OS check
-		final String OSNAME = System.getProperty("os.name").toLowerCase();
-		
-		if (browserType.equals("chrome")) {
-			// 1. Define the web driver
-			if (OSNAME.equals("mac")) {
-				System.setProperty("webdriver.chrome.driver", "/Users/woohyeok.kim/Desktop/study/selenium-webdriver/chromedriver");
-			} else{
-				System.setProperty("webdriver.chrome.driver", "C:\\Users\\woosy\\Desktop\\dev\\selenium-webdriver\\chromedriver.exe");
-			}
-			driver = new ChromeDriver();
-			
-		} else {
-			// 1. Create web driver
-			if (OSNAME.equals("mac")) {
-				System.setProperty("webdriver.gecko.driver", "/Users/woohyeok.kim/Desktop/study/selenium-webdriver/geckodriver");
-			} else{
-				System.setProperty("webdriver.gecko.driver", "C:\\Users\\woosy\\Desktop\\dev\\selenium-webdriver\\geckodriver.exe");
-			}
-			driver = new FirefoxDriver();	
-		}
-		
-		// 2. Open Browser to Account Management Page >> Click and Create Account
+		String browserType = "chrome";
+
+		// 1. Define web driver
+		WebDriver driver = null;
+		driver = DriverFactory.openWebDriver(browserType);
 		driver.get("http://sdettraining.com/trguitransactions/AccountManagement.aspx");
 		//driver.findElement(By.linkText("Create Account")).click(); <-- TODO not works. why?
 		driver.findElement(By.xpath("//*[@id='ctl01']/div[3]/div[2]/div/div[2]/a")).click();
 		
-		// 3. Fill out the form
+		// 2. Open Browser to Account Management Page >> Click and Create Account
+		WebElement nameElement = driver.findElement(By.name("ctl00$MainContent$txtFirstName"));
+		WebElement emailElement = driver.findElement(By.id("MainContent_txtEmail"));
+		WebElement phoneElememnt = driver.findElement(By.xpath("//*[@id='MainContent_txtHomePhone']"));
+		WebElement passwordElement = driver.findElement(By.cssSelector("input[type='password']"));
+		WebElement verifyPasswordElement = driver.findElement(By.name("ctl00$MainContent$txtVerifyPassword"));
+		WebElement countryElement = driver.findElement(By.id("MainContent_menuCountry"));
+		WebElement femaleRadio = driver.findElement(By.name("ctl00$MainContent$Gender"));
+		WebElement maleRadio = driver.findElement(By.id("MainContent_Male"));
 		
+		
+		// 3. Fill out the form
 		// How to locate elements
-		driver.findElement(By.name("ctl00$MainContent$txtFirstName")).sendKeys(name);
-		driver.findElement(By.id("MainContent_txtEmail")).sendKeys(email);
-		driver.findElement(By.xpath("//*[@id='MainContent_txtHomePhone']")).sendKeys(phoneNumber); // rel XPath.
+		nameElement.sendKeys(name);
+		emailElement.sendKeys(email);
+		phoneElememnt.sendKeys(phoneNumber); // rel XPath.
 		
 		//driver.findElement(By.cssSelector("input[id='MainContent_txtPassword']")).sendKeys("password");
-		driver.findElement(By.cssSelector("input[type='password']")).sendKeys(password);
-		driver.findElement(By.name("ctl00$MainContent$txtVerifyPassword")).sendKeys(password);
+		passwordElement.sendKeys(password);
+		verifyPasswordElement.sendKeys(password);
 		
 		// How to interact with the other elements
-		driver.findElement(By.id("MainContent_Female")).click();
+		// Radio button
+		//driver.findElement(By.id("MainContent_Female")).click();
 		//driver.findElement(By.cssSelector("input[name='ctl00$MainContent$Gender'][value='Male']")).click();
+		if (gender.equalsIgnoreCase("Female")) {
+			femaleRadio.click();
+		} else {
+			maleRadio.click();
+		}
 
 		// for drop-down
-		new Select(driver.findElement(By.id("MainContent_menuCountry"))).selectByVisibleText(country);
+		new Select(countryElement).selectByVisibleText(country);
 		driver.findElement(By.name("ctl00$MainContent$checkWeeklyEmail")).click();
 		driver.findElement(By.id("MainContent_btnSubmit")).click();
 		
-		// 4. Get confirmation
+		// 4. Get confirmation & close browser
 		String result = driver.findElement(By.id("MainContent_lblTransactionResult")).getText();
 		System.out.println("RESULT: " + result);
 		

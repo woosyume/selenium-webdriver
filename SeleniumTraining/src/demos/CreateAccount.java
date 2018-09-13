@@ -11,7 +11,7 @@ public class CreateAccount {
 		final String OSNAME = System.getProperty("os.name").toLowerCase();
 
 		// 1. Create web driver
-		if (OSNAME.equals("mac")) {
+		if (OSNAME.contains("mac")) {
 			System.setProperty("webdriver.gecko.driver", "/Users/woohyeok.kim/Desktop/study/selenium-webdriver/geckodriver");
 		} else{
 			System.setProperty("webdriver.gecko.driver", "C:\\Users\\woosy\\Desktop\\dev\\selenium-webdriver\\geckodriver.exe");
