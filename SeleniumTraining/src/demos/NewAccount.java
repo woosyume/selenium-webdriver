@@ -17,9 +17,9 @@ public class NewAccount {
 		String country = "Denmark";
 		String phoneNumber = "08036902222";
 		String gender = "Female";
-		String weeklyEmail;
-		String montjlyEmail;
-		String occasionalEmail;
+		boolean weeklyEmail = true;
+		boolean montjlyEmail = false;
+		boolean occasionalEmail = false;
 		String browserType = "chrome";
 
 		// 1. Define web driver
@@ -38,7 +38,9 @@ public class NewAccount {
 		WebElement countryElement = driver.findElement(By.id("MainContent_menuCountry"));
 		WebElement femaleRadio = driver.findElement(By.name("ctl00$MainContent$Gender"));
 		WebElement maleRadio = driver.findElement(By.id("MainContent_Male"));
-		
+		WebElement weeklyCheckBox = driver.findElement(By.name("ctl00$MainContent$checkWeeklyEmail"));
+		WebElement monthlyCheckBox = driver.findElement(By.id("MainContent_btnSubmit"));
+		WebElement submitButton = driver.findElement(By.id("MainContent_btnSubmit"));
 		
 		// 3. Fill out the form
 		// How to locate elements
@@ -61,13 +63,29 @@ public class NewAccount {
 		}
 
 		// for drop-down
-		new Select(countryElement).selectByVisibleText(country);
-		driver.findElement(By.name("ctl00$MainContent$checkWeeklyEmail")).click();
-		driver.findElement(By.id("MainContent_btnSubmit")).click();
+//		new Select(countryElement).selectByVisibleText(country);
+//		driver.findElement(By.name("ctl00$MainContent$checkWeeklyEmail")).click();
+		if (weeklyEmail) {
+			if (!weeklyCheckBox.isSelected()) {
+				weeklyCheckBox.click();
+			}
+		} else {
+			if (weeklyCheckBox.isSelected()) {
+				weeklyCheckBox.click();
+
+			}
+		}
+		submitButton.click();
 		
 		// 4. Get confirmation & close browser
 		String result = driver.findElement(By.id("MainContent_lblTransactionResult")).getText();
-		System.out.println("RESULT: " + result);
+		String expected = "Customer information added successfully";
+		
+		if (result.contains(expected)) {
+			System.out.println("RESULT: " + result);
+		} else {
+			System.out.println("TEST FAILED");
+		}
 		
 		// 5. Close the browser
 		driver.close();
