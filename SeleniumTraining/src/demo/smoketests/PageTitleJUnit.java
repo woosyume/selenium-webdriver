@@ -9,14 +9,14 @@ import org.openqa.selenium.WebDriver;
 import demo.utilities.DriverFactory;
 
 public class PageTitleJUnit {
-	
+	private WebDriver driver;
+	String webUrl = "http://sdettraining.com/trguitransactions/AccountManagement.aspx";
+
 	@Test
 	public void pageTitleTest() {
 		System.out.println("Running the test");
-		String webUrl = "http://sdettraining.com/trguitransactions/AccountManagement.aspx";
-		
-		WebDriver driver = new DriverFactory().openWebDriver("chrome");
 		driver.get(webUrl);
+
 		String actualTitle = driver.getTitle();
 		String expectedTitle = "SDET Training | Account Management";
 		
@@ -26,14 +26,14 @@ public class PageTitleJUnit {
 	
 	@Before
 	public void setUp() {
-		System.out.println("Setting up the test");
 		System.out.println("Initializing the driver");
+		driver = new DriverFactory().openWebDriver("chrome");
+
 	}
 	
 	@After
 	public void tearDown() {
 		System.out.println("Closing the test");
-		System.out.println("Closing the test");
-	
+		driver.close();
 	}
 }
