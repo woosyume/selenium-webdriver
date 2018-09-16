@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite" parallel="false">
-  <test name="Test">
+<suite name="SDET University Test Suites" parallel="false">
+  <test name="Smnoke Test: Home Page">
     <classes>
       <class name="demo.smoketests.ATagsTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+  <test name="Smoke Test: Login Page">
+    <classes>
+      <class name="demo.smoketests.LoginPresentTestNG"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
