@@ -25,7 +25,6 @@ public class CSV {
 		} catch (IOException e) {
 			System.out.println("Could not read");
 		}
-		
 		return data;
 	}
 }
