@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="demo.smoketests.ATagsTest">
+      <class name="demo.LoginDDTTestNG">
         <methods>
-          <include name="setUp"/>
+          <include name="LoginTest" invocation-numbers="1 2 3"/>
           <include name="tearDown"/>
-          <include name="aTagsLinksTest"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- demo.smoketests.ATagsTest -->
+      </class> <!-- demo.LoginDDTTestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

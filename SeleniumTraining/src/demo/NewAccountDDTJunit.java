@@ -16,7 +16,7 @@ import demo.utilities.CSV;
 import demo.utilities.DriverFactory;
 
 @RunWith(value = Parameterized.class)
-public class NewAccountDDT {
+public class NewAccountDDTJunit {
 	private String name, email, phone, gender, password, country;
 	private boolean weeklyEmail, monthlyEmail, occasionalEmail = false;
 	WebDriver driver;
@@ -24,7 +24,7 @@ public class NewAccountDDT {
 		femaleRadio, maleRadio, weeklyCheckBox, monthlyCheckBox,submitButton;
 		
 	// Constructor that parses parameters to the test method
-	public NewAccountDDT(String name, String email, String phone, String gender, String password, String country,
+	public NewAccountDDTJunit(String name, String email, String phone, String gender, String password, String country,
 			String weeklyEmail, String monthlyEmail, String occasionalEmail) {
 		this.name = name;
 		this.email = email;
