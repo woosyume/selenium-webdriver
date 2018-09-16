@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="demo.LoginDDTTestNG">
+      <class name="demo.tests.Expedia">
         <methods>
-          <include name="LoginTest" invocation-numbers="1 2 3"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="hotelReservationTest"/>
         </methods>
-      </class> <!-- demo.LoginDDTTestNG -->
+      </class> <!-- demo.tests.Expedia -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17308" started-at="2018-09-16T13:08:17Z" finished-at="2018-09-16T13:08:34Z">
+  <suite name="Default suite" duration-ms="16715" started-at="2018-09-16T14:44:43Z" finished-at="2018-09-16T14:45:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17308" started-at="2018-09-16T13:08:17Z" finished-at="2018-09-16T13:08:34Z">
+    <test name="Default test" duration-ms="16715" started-at="2018-09-16T14:44:43Z" finished-at="2018-09-16T14:45:00Z">
       <class name="demo.tests.Expedia">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:demo.tests.Expedia@86be70a]" name="setUp" is-config="true" duration-ms="17190" started-at="2018-09-16T13:08:17Z" finished-at="2018-09-16T13:08:34Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:demo.tests.Expedia@86be70a]" name="setUp" is-config="true" duration-ms="15249" started-at="2018-09-16T14:44:43Z" finished-at="2018-09-16T14:44:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="hotelReservationTest()[pri:0, instance:demo.tests.Expedia@86be70a]" name="hotelReservationTest" duration-ms="18" started-at="2018-09-16T13:08:34Z" finished-at="2018-09-16T13:08:34Z">
+        <test-method status="PASS" signature="hotelReservationTest()[pri:0, instance:demo.tests.Expedia@86be70a]" name="hotelReservationTest" duration-ms="1367" started-at="2018-09-16T14:44:58Z" finished-at="2018-09-16T14:44:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- hotelReservationTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:demo.tests.Expedia@86be70a]" name="tearDown" is-config="true" duration-ms="80" started-at="2018-09-16T13:08:34Z" finished-at="2018-09-16T13:08:34Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:demo.tests.Expedia@86be70a]" name="tearDown" is-config="true" duration-ms="84" started-at="2018-09-16T14:44:59Z" finished-at="2018-09-16T14:45:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
