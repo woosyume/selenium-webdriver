@@ -1,129 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18338" started-at="2018-09-16T07:54:59Z" finished-at="2018-09-16T07:55:18Z">
+  <suite name="Default suite" duration-ms="17308" started-at="2018-09-16T13:08:17Z" finished-at="2018-09-16T13:08:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18338" started-at="2018-09-16T07:54:59Z" finished-at="2018-09-16T07:55:18Z">
-      <class name="demo.LoginDDTTestNG">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="setUp" is-config="true" duration-ms="3549" started-at="2018-09-16T07:55:00Z" finished-at="2018-09-16T07:55:03Z">
+    <test name="Default test" duration-ms="17308" started-at="2018-09-16T13:08:17Z" finished-at="2018-09-16T13:08:34Z">
+      <class name="demo.tests.Expedia">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:demo.tests.Expedia@86be70a]" name="setUp" is-config="true" duration-ms="17190" started-at="2018-09-16T13:08:17Z" finished-at="2018-09-16T13:08:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LoginTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="LoginTest" duration-ms="1332" started-at="2018-09-16T07:55:03Z" data-provider="getData" finished-at="2018-09-16T07:55:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Ellie Prynne]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ep@testemail.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[ep1password]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="hotelReservationTest()[pri:0, instance:demo.tests.Expedia@86be70a]" name="hotelReservationTest" duration-ms="18" started-at="2018-09-16T13:08:34Z" finished-at="2018-09-16T13:08:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="tearDown" is-config="true" duration-ms="77" started-at="2018-09-16T07:55:05Z" finished-at="2018-09-16T07:55:05Z">
+        </test-method> <!-- hotelReservationTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:demo.tests.Expedia@86be70a]" name="tearDown" is-config="true" duration-ms="80" started-at="2018-09-16T13:08:34Z" finished-at="2018-09-16T13:08:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="setUp" is-config="true" duration-ms="2990" started-at="2018-09-16T07:55:05Z" finished-at="2018-09-16T07:55:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LoginTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="LoginTest" duration-ms="1126" started-at="2018-09-16T07:55:08Z" data-provider="getData" finished-at="2018-09-16T07:55:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Shawn Thompson]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[sw@testemail.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[sw2password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="tearDown" is-config="true" duration-ms="64" started-at="2018-09-16T07:55:09Z" finished-at="2018-09-16T07:55:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="setUp" is-config="true" duration-ms="3274" started-at="2018-09-16T07:55:09Z" finished-at="2018-09-16T07:55:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LoginTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="LoginTest" duration-ms="1235" started-at="2018-09-16T07:55:12Z" data-provider="getData" finished-at="2018-09-16T07:55:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Michael Lane]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ml@testemail.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[ml3password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="tearDown" is-config="true" duration-ms="108" started-at="2018-09-16T07:55:13Z" finished-at="2018-09-16T07:55:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="setUp" is-config="true" duration-ms="3203" started-at="2018-09-16T07:55:13Z" finished-at="2018-09-16T07:55:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LoginTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="LoginTest" duration-ms="1124" started-at="2018-09-16T07:55:17Z" data-provider="getData" finished-at="2018-09-16T07:55:18Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Janelle Von]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[jv@testemail.com]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[jv4password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:demo.LoginDDTTestNG@3dfc5fb8]" name="tearDown" is-config="true" duration-ms="66" started-at="2018-09-16T07:55:18Z" finished-at="2018-09-16T07:55:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- demo.LoginDDTTestNG -->
+      </class> <!-- demo.tests.Expedia -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
