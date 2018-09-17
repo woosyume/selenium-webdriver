@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -85,8 +86,19 @@ public class Expedia {
 		System.out.println("HOTEL: " + hotelName + ", RATING: " + hotelRating);
 		
 		// 4. Book reservation
+		driver.findElement(By.xpath("//*[@id=\"rooms-and-rates\"]/div/article/table/tbody/tr/td[3]/div/div[1]/button")).click();
+		driver.findElement(By.id("pay-later-button")).click();
+		System.out.println("PRICE: " + driver.findElement(By.xpath("//*[@id=\'trip-summary\']/div[2]/div[5]/span[2]")).getText());
 		
 		// 5. Fiil out contact / billing
+		//driver.findElement(By.xpath("//*[@id=\"preferences\"]/fieldset/div[3]/fieldset/div[2]/label/input")).sendKeys("Woohyeok Kim");
+		//new Select(driver.findElement(By.id("oneLinePhoneNumberCountryCodeSelect"))).selectByVisibleText("\n" + 
+		//		"                                        Japan\n" + 
+		//		"                                            +81\n" + 
+		//		"                                        ");
+		
+		//driver.findElement(By.xpath("//*[@id=\"preferences\"]/fieldset/div[3]/fieldset/div[2]/fieldset/div[2]/label/input")).sendKeys("08033339999");
+
 		
 		// 6. Get confirmation
 	}
