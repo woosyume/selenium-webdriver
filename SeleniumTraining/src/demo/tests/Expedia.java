@@ -22,6 +22,7 @@ public class Expedia {
 	private String checkInDate = "10/26/2018";
 	private String checkOutDate = "10/30/2018";
 	private String starRating = "star5";
+	private String searchResult = "1";
 	
 	@Test
 	public void hotelReservationTest() {
@@ -68,6 +69,9 @@ public class Expedia {
 		driver.findElement(By.cssSelector("#" + starRating)).click();
 		
 		// 3. Analyze the results and make our selection
+		//driver.findElement(By.xpath("//*[@id=\"40553\"]/div[2]/div/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"resultsContainer\"]/section/article[" + searchResult + "]/div[2]/div/a")).click();
+		// xpath를 이용해 결과값을 변수화하여 사용할 수도 있다. 참고로 div[2]의 의미는 2번째 div라는 것
 		
 		// 4. Book reservation
 		
