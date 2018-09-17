@@ -1,5 +1,7 @@
 package demo.tests;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -19,15 +21,19 @@ public class Expedia {
 	private String city = "New York, New York";
 	private String checkInDate = "10/26/2018";
 	private String checkOutDate = "10/30/2018";
-	
+	private String starRating = "star5";
 	
 	@Test
 	public void hotelReservationTest() {
 		// 1. Search
 		driver.findElement(By.id("tab-hotel-tab-hp")).click();
+		driver.findElement(By.id("hotel-destination-hp-hotel")).clear();
 		driver.findElement(By.id("hotel-destination-hp-hotel")).sendKeys(city);
 		
+		driver.findElement(By.id("hotel-checkout-hp-hotel")).clear();
 		driver.findElement(By.id("hotel-checkout-hp-hotel")).sendKeys(checkOutDate);
+		
+		driver.findElement(By.id("hotel-checkin-hp-hotel")).clear();
 		driver.findElement(By.id("hotel-checkin-hp-hotel")).sendKeys(checkInDate);
 		
 		driver.findElement(By.id("hotel-checkin-hp-hotel")).sendKeys(Keys.ENTER);
@@ -54,8 +60,12 @@ public class Expedia {
 		//driver.findElement(By.id("search-button-hp-package")).click();
 		
 		
+		// Print 
+		String actualCity = driver.findElement(By.xpath("//*[@id=\"hotelResultTitle\"]/h1")).getText();
+		System.out.println("CITY: " + actualCity);
 		
 		// 2. Modify the search results page, give criteria
+		driver.findElement(By.cssSelector("#" + starRating)).click();
 		
 		// 3. Analyze the results and make our selection
 		
@@ -68,7 +78,9 @@ public class Expedia {
 	
 	@BeforeMethod
 	public void setUp() {
-		driver = DriverFactory.openWebDriver(browserType );
+		driver = DriverFactory.openWebDriver(browserType);
+		// 각 요소가 다 뜨기전에 라이브러리에서 접근하기 때문에 NoSuchElement가 나온다. 그것에 대한 방지책
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://www.expedia.com/");
 	}
 	
